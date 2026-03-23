@@ -48,7 +48,7 @@ export function TermsModal({ isOpen, onClose }: { isOpen: boolean; onClose: () =
   return (
     <ModalShell isOpen={isOpen} onClose={onClose}
       title="Terms of Service"
-      subtitle="Effective 1 January 2025 · Spendable Finance, Inc.">
+      subtitle="Effective 1 March 2026 · Spendable">
       <Section title="1. Acceptance of Terms">
         By creating an account or using Spendable, you agree to these Terms and our Privacy Policy. If you disagree, please do not use the service.
       </Section>
@@ -111,7 +111,7 @@ export function PrivacyModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   return (
     <ModalShell isOpen={isOpen} onClose={onClose}
       title="Privacy Policy"
-      subtitle="Effective 1 January 2025 · Spendable Finance, Inc.">
+      subtitle="Effective 1 March 2026 · Spendable">
       <Box bg="#f0f0ff" border="1px solid #d0d8f5" borderRadius="10px" p={4}>
         <Text fontSize="13px" fontWeight="700" color="#3d4faf" mb={1}>The short version</Text>
         <Text fontSize="13px" color="#3d4faf" lineHeight="1.6">
@@ -119,7 +119,7 @@ export function PrivacyModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
         </Text>
       </Box>
       <Section title="1. Who We Are">
-        Spendable Finance, Inc. is the data controller for GDPR purposes. Contact: <ChakraLink href="mailto:hello@spendable.finance" color="#4C5FD5">hello@spendable.finance</ChakraLink>
+        Spendable is the data controller for GDPR purposes. Contact: <ChakraLink href="mailto:hello@spendable.finance" color="#4C5FD5">hello@spendable.finance</ChakraLink>
       </Section>
       <Divider />
       <Section title="2. What We Collect">
@@ -212,7 +212,7 @@ export function SecurityModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
   return (
     <ModalShell isOpen={isOpen} onClose={onClose}
       title="Security"
-      subtitle="How we protect your data · Last reviewed January 2025">
+      subtitle="How we protect your data · Last reviewed March 2026">
       <Box bg="#f0f0ff" border="1px solid #d0d8f5" borderRadius="10px" p={4}>
         <Text fontSize="13px" color="#3d4faf" lineHeight="1.6">
           Security is foundational to Spendable. Your financial data deserves the same protection as your bank account. Here's exactly what we do.
@@ -239,7 +239,7 @@ export function SecurityModal({ isOpen, onClose }: { isOpen: boolean; onClose: (
       <Divider />
       <Section title="Report a vulnerability">
         If you discover a security issue, please email us at{' '}
-        <Text as="span" color="#4C5FD5" fontWeight="600">security@spendable.finance</Text>
+        <ChakraLink href="mailto:hello@spendable.finance" color="#4C5FD5" fontWeight="600">hello@spendable.finance</ChakraLink>
         {' '}before public disclosure. We aim to respond within 48 hours and resolve confirmed issues within 30 days.
       </Section>
     </ModalShell>
@@ -282,7 +282,7 @@ export function CookiesModal({ isOpen, onClose }: { isOpen: boolean; onClose: ()
   return (
     <ModalShell isOpen={isOpen} onClose={onClose}
       title="Cookie Policy"
-      subtitle="Effective 1 January 2025 · Spendable Finance, Inc.">
+      subtitle="Effective 1 March 2026 · Spendable">
       <Box bg="#f0f0ff" border="1px solid #d0d8f5" borderRadius="10px" p={4}>
         <Text fontSize="13px" color="#3d4faf" lineHeight="1.6">
           We use only the cookies strictly necessary to provide the service. We do not use advertising cookies, third-party tracking cookies, or any cookies for behavioural profiling.

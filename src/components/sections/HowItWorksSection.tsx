@@ -73,7 +73,7 @@ export function HowItWorksSection() {
 
         <Text textAlign="center" fontSize="17px" color={PURPLE.muted}
           maxW="480px" mx="auto" mb={14} lineHeight="1.65">
-          Setup takes under 5 minutes. No bank connections. No complexity.
+          Setup takes under 5 minutes. No bank connections.<br />No complexity.
         </Text>
 
         <SimpleGrid columns={{ base: 1, md: 3 }} spacing={6} position="relative">
@@ -100,7 +100,7 @@ export function HowItWorksSection() {
             >
               {/* Step number badge — top-right */}
               <Box position="absolute" top={4} right={5}>
-                <Text fontSize="11px" fontWeight="800" color={step.iconColor} opacity={0.4}
+                <Text fontSize="16px" fontWeight="800" color={step.iconColor} opacity={0.5}
                   fontFamily="'Fraunces', Georgia, serif">
                   0{step.step}
                 </Text>

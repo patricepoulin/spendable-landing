@@ -16,7 +16,7 @@ export function Navbar() {
         align="center"
         justify="space-between"
       >
-        <HStack spacing={2.5}>
+        <HStack spacing={2.5} as="a" href="#" onClick={(e: React.MouseEvent) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }} cursor="pointer" _hover={{ opacity: 0.85 }} transition="opacity 0.15s">
           <Box w={8} h={8} flexShrink={0}>
             <svg width="32" height="32" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
               <defs>
