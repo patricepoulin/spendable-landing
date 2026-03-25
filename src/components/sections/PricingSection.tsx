@@ -1,7 +1,10 @@
-import { Box, SimpleGrid, VStack, HStack, Text, Heading, Button } from '@chakra-ui/react';
+import { Box, SimpleGrid, VStack, HStack, Text, Heading, Button, Skeleton } from '@chakra-ui/react';
 import { pricingTiers } from '../../data/mockData';
+import { usePrices } from '../../hooks/usePrices';
 
 export function PricingSection() {
+  const { usdAmount, format, loading: pricesLoading } = usePrices();
+
   return (
     <Box
       id="pricing"
@@ -53,7 +56,6 @@ export function PricingSection() {
               }}
               transition="all 0.25s"
             >
-              {/* Grid texture on Pro card */}
               {tier.highlighted && (
                 <Box
                   position="absolute" inset={0} opacity={0.03}
@@ -61,7 +63,6 @@ export function PricingSection() {
                   pointerEvents="none"
                 />
               )}
-              {/* Glow blob */}
               {tier.highlighted && (
                 <Box
                   position="absolute" top="-60px" right="-60px"
@@ -72,10 +73,7 @@ export function PricingSection() {
               )}
 
               {tier.badge && (
-                <Box
-                  position="absolute" top={5} right={5}
-                  px={3} py={1} bg="#4C5FD5" borderRadius="full"
-                >
+                <Box position="absolute" top={5} right={5} px={3} py={1} bg="#4C5FD5" borderRadius="full">
                   <Text fontSize="11px" fontWeight="700" color="white">{tier.badge}</Text>
                 </Box>
               )}
@@ -103,15 +101,20 @@ export function PricingSection() {
                     <>
                       <Text fontSize="22px" fontWeight="600"
                         color={tier.highlighted ? '#9d8fd4' : '#5a6a7a'}
-                        alignSelf="flex-start" mt="8px">$</Text>
-                      <Text
-                        fontFamily="'Fraunces', Georgia, serif"
-                        fontSize="48px" fontWeight="800"
-                        color={tier.highlighted ? 'white' : '#1C2B3A'}
-                        letterSpacing="-2px" lineHeight="1"
-                      >
-                        {tier.price}
+                        alignSelf="flex-start" mt="8px">
+                        $
                       </Text>
+                      <Skeleton isLoaded={!pricesLoading} borderRadius="4px">
+                        <Text
+                          fontFamily="'Fraunces', Georgia, serif"
+                          fontSize="48px" fontWeight="800"
+                          color={tier.highlighted ? 'white' : '#1C2B3A'}
+                          letterSpacing="-2px" lineHeight="1"
+                          minW="60px"
+                        >
+                          {usdAmount ?? tier.price}
+                        </Text>
+                      </Skeleton>
                       <Text fontSize="14px" fontWeight="500"
                         color={tier.highlighted ? '#9d8fd4' : '#8a9aaa'}>
                         /{tier.period}
@@ -119,6 +122,15 @@ export function PricingSection() {
                     </>
                   )}
                 </HStack>
+
+                {/* Per-currency breakdown for Pro */}
+                {tier.highlighted && (
+                  <Skeleton isLoaded={!pricesLoading} borderRadius="6px" mb={3}>
+                    <Text fontSize="12px" color="#9d8fd4" lineHeight="1.6">
+                      {format('usd')} · {format('gbp')} · {format('eur')} · {format('cad')} · {format('aud')} per month
+                    </Text>
+                  </Skeleton>
+                )}
 
                 <Text
                   fontSize="14px" lineHeight="1.5" mb={6}
