@@ -178,13 +178,16 @@ export function Footer({ onTermsOpen, onPrivacyOpen, onSecurityOpen, onCookiesOp
               © 2026 Spendable Finance, Inc. · Built for freelancers, by a freelancer.
             </Text>
             <HStack spacing={5}>
-              {['Twitter', 'LinkedIn', 'GitHub'].map(s => (
-                <Text key={s} as="a" href="#"
-                  fontSize="12px" color="rgba(124,92,246,0.4)" fontWeight="500"
-                  _hover={{ color: '#a78bf8' }} transition="color 0.15s" cursor="pointer">
-                  {s}
-                </Text>
-              ))}
+              <Text as="a" href="https://x.com/spendable_" target="_blank" rel="noopener noreferrer"
+                fontSize="12px" color="rgba(124,92,246,0.4)" fontWeight="500"
+                _hover={{ color: '#a78bf8' }} transition="color 0.15s">
+                X / Twitter
+              </Text>
+              <Text as="a" href="https://instagram.com/spendable.finance" target="_blank" rel="noopener noreferrer"
+                fontSize="12px" color="rgba(124,92,246,0.4)" fontWeight="500"
+                _hover={{ color: '#a78bf8' }} transition="color 0.15s">
+                Instagram
+              </Text>
             </HStack>
           </HStack>
 
