@@ -175,7 +175,7 @@ export function Footer({ onTermsOpen, onPrivacyOpen, onSecurityOpen, onCookiesOp
           {/* Bottom bar */}
           <HStack justify="space-between" flexWrap="wrap" gap={3}>
             <Text fontSize="12px" color="rgba(124,92,246,0.4)">
-              © 2026 Spendable Finance, Inc. · Built for freelancers, by a freelancer.
+              © 2026 Spendable · Built for freelancers, by a freelancer.
             </Text>
             <HStack spacing={5}>
               <Text as="a" href="https://x.com/spendable_" target="_blank" rel="noopener noreferrer"
