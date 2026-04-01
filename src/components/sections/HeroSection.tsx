@@ -8,6 +8,7 @@ import {
   useBreakpointValue,
 } from '@chakra-ui/react';
 import { DashboardMockup } from '../ui/DashboardMockup';
+import { MobileDashboardMockup } from '../ui/MobileDashboardMockup';
 
 export function HeroSection() {
   const direction = useBreakpointValue({ base: 'column', lg: 'row' }) as
@@ -245,7 +246,7 @@ export function HeroSection() {
           </HStack>
         </VStack>
 
-        {/* Right: dashboard mockup */}
+        {/* Right: dashboard mockup — phone on mobile, desktop on large screens */}
         <Box
           flex={{ base: 'none', lg: '0 0 auto' }}
           w={{ base: 'full', lg: 'auto' }}
@@ -257,7 +258,12 @@ export function HeroSection() {
             transform: 'perspective(1200px) rotateY(-2deg) rotateX(1deg)',
           }}
         >
-          <DashboardMockup />
+          <Box display={{ base: 'block', lg: 'none' }}>
+            <MobileDashboardMockup />
+          </Box>
+          <Box display={{ base: 'none', lg: 'block' }}>
+            <DashboardMockup />
+          </Box>
         </Box>
       </Flex>
     </Box>
