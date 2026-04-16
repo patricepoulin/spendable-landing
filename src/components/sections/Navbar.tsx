@@ -52,6 +52,14 @@ export function Navbar() {
               {link}
             </Text>
           ))}
+          <Text
+            as="a" href="/guides"
+            fontSize="14px" fontWeight="500" color="rgba(167,139,248,0.85)"
+            _hover={{ color: 'white' }} transition="color 0.15s"
+            cursor="pointer"
+          >
+            Guides
+          </Text>
         </HStack>
 
         <HStack spacing={3}>

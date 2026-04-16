@@ -156,6 +156,42 @@ export function Footer({ onTermsOpen, onPrivacyOpen, onSecurityOpen, onCookiesOp
               <FooterLink label="About" onClick={onAboutOpen} />
             </VStack>
 
+            {/* Resources */}
+            <VStack align="flex-start" spacing={3}>
+              <Text fontSize="11px" fontWeight="700" color={LABEL_COLOR}
+                textTransform="uppercase" letterSpacing="1px">
+                Resources
+              </Text>
+              <Text
+                as="a" href="/guides"
+                fontSize="13px" color={LINK_COLOR} fontWeight="500"
+                _hover={LINK_HOVER} transition="color 0.15s" textDecoration="none"
+              >
+                Freelance Guides
+              </Text>
+              <Text
+                as="a" href="/for/uk-freelancers"
+                fontSize="13px" color={LINK_COLOR} fontWeight="500"
+                _hover={LINK_HOVER} transition="color 0.15s" textDecoration="none"
+              >
+                UK Freelancers
+              </Text>
+              <Text
+                as="a" href="/for/us-freelancers"
+                fontSize="13px" color={LINK_COLOR} fontWeight="500"
+                _hover={LINK_HOVER} transition="color 0.15s" textDecoration="none"
+              >
+                US Freelancers
+              </Text>
+              <Text
+                as="a" href="/compare/freelance-finance-spreadsheet-vs-app"
+                fontSize="13px" color={LINK_COLOR} fontWeight="500"
+                _hover={LINK_HOVER} transition="color 0.15s" textDecoration="none"
+              >
+                Spreadsheet vs App
+              </Text>
+            </VStack>
+
             {/* Legal */}
             <VStack align="flex-start" spacing={3}>
               <Text fontSize="11px" fontWeight="700" color={LABEL_COLOR}
