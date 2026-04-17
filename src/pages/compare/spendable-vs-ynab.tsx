@@ -414,14 +414,14 @@ export default function Page() {
             desc: "If you're still in a spreadsheet, here's the comparison to read first.",
           },
           {
+            href: '/compare/spendable-vs-quickbooks',
+            label: 'Spendable vs QuickBooks',
+            desc: 'How Spendable compares to accounting software for freelancers.',
+          },
+          {
             href: '/guides/freelance-tax-planning',
             label: 'Freelance tax planning guide',
             desc: "The tax reserve feature YNAB doesn't have.",
-          },
-          {
-            href: '/guides/self-employed-budgeting',
-            label: 'Self-employed budgeting framework',
-            desc: 'The approach to budgeting built around irregular income.',
           },
         ]}
       />

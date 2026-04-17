@@ -80,6 +80,11 @@ const COMPARISONS = [
     title: 'Spendable vs YNAB for Freelancers',
     desc: 'How the two approaches compare for self-employed users with irregular income.',
   },
+  {
+    href: '/compare/spendable-vs-quickbooks',
+    title: 'Spendable vs QuickBooks for Freelancers',
+    desc: 'Accounting software vs financial clarity tool — which one answers the daily spending question.',
+  },
 ];
 
 export default function GuidesIndexPage() {

@@ -319,19 +319,19 @@ export default function SpreadsheetVsAppPage() {
       <RelatedPages
         links={[
           {
-            href: '/guides/freelance-tax-planning',
-            label: 'Freelance tax planning guide',
-            desc: "How to calculate and manage your tax reserve — the thing spreadsheets can't do in real time.",
-          },
-          {
-            href: '/guides/self-employed-budgeting',
-            label: 'Self-employed budgeting framework',
-            desc: 'The 4-bucket system that works when income is irregular.',
-          },
-          {
             href: '/compare/spendable-vs-ynab',
             label: 'Spendable vs YNAB for freelancers',
             desc: 'How the two approaches compare for self-employed users.',
+          },
+          {
+            href: '/compare/spendable-vs-quickbooks',
+            label: 'Spendable vs QuickBooks',
+            desc: 'How Spendable compares to accounting software for freelancers.',
+          },
+          {
+            href: '/guides/freelance-tax-planning',
+            label: 'Freelance tax planning guide',
+            desc: "How to calculate and manage your tax reserve — the thing spreadsheets can't do in real time.",
           },
         ]}
       />
