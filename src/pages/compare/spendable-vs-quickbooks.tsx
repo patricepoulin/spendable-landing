@@ -43,7 +43,16 @@ const Partial = ({ label }: { label: string }) => (
 
 export default function Page() {
   return (
-    <SEOPageLayout maxW='860px'>
+    <SEOPageLayout
+      maxW='860px'
+      meta={{
+        title:
+          'Spendable vs QuickBooks for Freelancers — Which Is Right for You?',
+        description:
+          'QuickBooks is accounting software. Spendable is a financial clarity tool. Most freelancers need one, not both — here is how to choose.',
+        canonical: '/compare/spendable-vs-quickbooks',
+      }}
+    >
       <ArticleHeader
         tag='Comparison'
         readTime='5 min read'

@@ -89,7 +89,15 @@ const COMPARISONS = [
 
 export default function GuidesIndexPage() {
   return (
-    <SEOPageLayout maxW='960px'>
+    <SEOPageLayout
+      maxW='960px'
+      meta={{
+        title: 'Freelance Finance Guides',
+        description:
+          'Practical guides for freelancers on tax planning, budgeting with irregular income, cash flow, and financial clarity.',
+        canonical: '/guides',
+      }}
+    >
       <Box mb={12}>
         <Text
           fontSize='11px'
@@ -227,6 +235,65 @@ export default function GuidesIndexPage() {
               </Text>
               <Text fontSize='13px' color='#5a6a7a' lineHeight='1.6'>
                 {c.desc}
+              </Text>
+            </Box>
+          ))}
+        </SimpleGrid>
+      </Box>
+
+      {/* Audience pages */}
+      <Box mb={10}>
+        <Text
+          fontSize='11px'
+          fontWeight='700'
+          color='#4C5FD5'
+          textTransform='uppercase'
+          letterSpacing='1.5px'
+          mb={4}
+        >
+          Built for your situation
+        </Text>
+        <SimpleGrid columns={{ base: 1, md: 2 }} spacing={4}>
+          {[
+            {
+              href: '/for/uk-freelancers',
+              title: 'UK Freelancers',
+              desc: 'Self-assessment deadlines, GBP tracking, April to April tax year.',
+            },
+            {
+              href: '/for/us-freelancers',
+              title: 'US Freelancers',
+              desc: 'Quarterly IRS estimates, USD tracking, state tax support.',
+            },
+            {
+              href: '/for/contractors',
+              title: 'Contractors',
+              desc: 'Contract gap runway, IR35-aware tax rates, day rate income tracking.',
+            },
+            {
+              href: '/for/designers',
+              title: 'Freelance Designers',
+              desc: 'Retainer and project income smoothing, source tracking, tax reserve.',
+            },
+          ].map((a) => (
+            <Box
+              key={a.href}
+              as='a'
+              href={a.href}
+              display='block'
+              bg='white'
+              border='1px solid #E8E8E3'
+              borderRadius='14px'
+              p={4}
+              _hover={{ borderColor: '#4C5FD5', bg: '#f8f9ff' }}
+              transition='all 0.15s'
+              textDecoration='none'
+            >
+              <Text fontWeight='700' fontSize='14px' color='#4C5FD5' mb={1}>
+                {a.title}
+              </Text>
+              <Text fontSize='13px' color='#5a6a7a' lineHeight='1.5'>
+                {a.desc}
               </Text>
             </Box>
           ))}

@@ -85,7 +85,14 @@ function RateCard({
 
 export default function Page() {
   return (
-    <SEOPageLayout>
+    <SEOPageLayout
+      meta={{
+        title: 'How Much Should You Save for Taxes as a Freelancer?',
+        description:
+          'Concrete tax percentages for UK, US, Canada, and Australia — with worked examples you can apply immediately.',
+        canonical: '/guides/how-much-to-save-for-taxes',
+      }}
+    >
       <ArticleHeader
         tag='Tax Guide'
         readTime='6 min read'

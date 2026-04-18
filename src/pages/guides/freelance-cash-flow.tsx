@@ -19,7 +19,14 @@ import {
 
 export default function Page() {
   return (
-    <SEOPageLayout>
+    <SEOPageLayout
+      meta={{
+        title: 'Cash Flow Management for Freelancers',
+        description:
+          'Late-paying clients, irregular income, and surprise bills can all threaten cash flow. Here are the five systems that keep freelancers financially stable.',
+        canonical: '/guides/freelance-cash-flow',
+      }}
+    >
       <ArticleHeader
         tag='Cash Flow Guide'
         readTime='6 min read'

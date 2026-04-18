@@ -43,7 +43,15 @@ const Partial = ({ label }: { label: string }) => (
 
 export default function Page() {
   return (
-    <SEOPageLayout maxW='860px'>
+    <SEOPageLayout
+      maxW='860px'
+      meta={{
+        title: 'Spendable vs YNAB for Freelancers — Which Is Better?',
+        description:
+          'YNAB is built for regular paychecks. Spendable is built for irregular income, automatic tax reserves, and the specific needs of self-employed people.',
+        canonical: '/compare/spendable-vs-ynab',
+      }}
+    >
       <ArticleHeader
         tag='Comparison'
         readTime='5 min read'

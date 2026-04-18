@@ -69,7 +69,15 @@ const ROWS: [string, React.ReactNode, React.ReactNode][] = [
 
 export default function SpreadsheetVsAppPage() {
   return (
-    <SEOPageLayout maxW='860px'>
+    <SEOPageLayout
+      maxW='860px'
+      meta={{
+        title: 'Freelance Finance: Spreadsheet vs App — Which Is Better?',
+        description:
+          "An honest comparison of managing freelance finances in a spreadsheet vs a dedicated tool. When each makes sense and the exact moment you've outgrown your spreadsheet.",
+        canonical: '/compare/freelance-finance-spreadsheet-vs-app',
+      }}
+    >
       <ArticleHeader
         tag='Comparison'
         readTime='5 min read'

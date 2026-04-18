@@ -31,7 +31,14 @@ import {
 
 export default function Page() {
   return (
-    <SEOPageLayout>
+    <SEOPageLayout
+      meta={{
+        title: 'Budgeting With Irregular Income: A Practical Guide',
+        description:
+          "Standard budgeting advice assumes fixed income. Here are the strategies that actually work when you can't predict next month's earnings.",
+        canonical: '/guides/irregular-income-budgeting',
+      }}
+    >
       <ArticleHeader
         tag='Budgeting Guide'
         readTime='6 min read'

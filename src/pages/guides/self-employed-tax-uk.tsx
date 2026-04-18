@@ -109,7 +109,14 @@ function DeadlineCard({
 
 export default function Page() {
   return (
-    <SEOPageLayout>
+    <SEOPageLayout
+      meta={{
+        title: 'UK Self-Assessment Tax: A Complete Guide for Freelancers',
+        description:
+          'Everything UK freelancers need to know about self-assessment — registration, payment dates, payments on account, and how to never be caught short by HMRC.',
+        canonical: '/guides/self-employed-tax-uk',
+      }}
+    >
       <ArticleHeader
         tag='Tax Guide · UK'
         readTime='8 min read'

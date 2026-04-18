@@ -30,7 +30,14 @@ import {
 
 export default function Page() {
   return (
-    <SEOPageLayout>
+    <SEOPageLayout
+      meta={{
+        title: 'What Is Income Smoothing — And Why Freelancers Need It',
+        description:
+          'A 6-month rolling average protects you from feast-and-famine spending. Here is exactly how income smoothing works.',
+        canonical: '/guides/freelance-income-smoothing',
+      }}
+    >
       <ArticleHeader
         tag='Income Guide'
         readTime='5 min read'

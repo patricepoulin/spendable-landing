@@ -28,7 +28,15 @@ const APP_URL = 'https://app.spendable.finance';
 
 export default function Page() {
   return (
-    <SEOPageLayout maxW='860px'>
+    <SEOPageLayout
+      maxW='860px'
+      meta={{
+        title: 'Financial Clarity for US Freelancers — Quarterly Taxes Handled',
+        description:
+          'Spendable tracks your quarterly estimated tax reserve, monitors IRS deadlines, and shows your safe-to-spend in USD — in real time.',
+        canonical: '/for/us-freelancers',
+      }}
+    >
       {/* Hero */}
       <Box
         bg='#1e1245'

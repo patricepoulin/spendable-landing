@@ -30,7 +30,14 @@ import {
 
 export default function Page() {
   return (
-    <SEOPageLayout>
+    <SEOPageLayout
+      meta={{
+        title: 'How Much Emergency Fund Does a Freelancer Need?',
+        description:
+          "The standard advice says 3 months. For freelancers it's often not enough. Here's how to calculate your real number.",
+        canonical: '/guides/freelance-emergency-fund',
+      }}
+    >
       <ArticleHeader
         tag='Savings Guide'
         readTime='5 min read'
