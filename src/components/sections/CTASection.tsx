@@ -57,8 +57,8 @@ export function CTASection() {
             maxW='460px'
             mb={10}
           >
-            Join 2,400+ freelancers who stopped guessing and started knowing
-            exactly how much they can safely spend.
+            Stop guessing and start knowing exactly how much you can safely
+            spend.
           </Text>
 
           <Button

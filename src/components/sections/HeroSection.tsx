@@ -188,62 +188,6 @@ export function HeroSection() {
               See how it works →
             </Button>
           </HStack>
-
-          {/* Social proof */}
-          <HStack
-            spacing={4}
-            mt={8}
-            flexWrap='wrap'
-            justify={{ base: 'center', lg: 'flex-start' }}
-          >
-            <HStack spacing={1.5}>
-              <HStack spacing={-1}>
-                {[
-                  { name: 'Sara K',   bg: '4C5FD5', color: 'fff' },
-                  { name: 'Mike R',   bg: '27AE60', color: 'fff' },
-                  { name: 'Priya M',  bg: '7c5cf6', color: 'fff' },
-                ].map((av, i) => (
-                  <Box
-                    key={i}
-                    as='img'
-                    src={`https://ui-avatars.com/api/?name=${encodeURIComponent(av.name)}&background=${av.bg}&color=${av.color}&size=56&bold=true&font-size=0.4&rounded=true`}
-                    w='28px'
-                    h='28px'
-                    borderRadius='full'
-                    border='2px solid rgba(30,18,69,0.9)'
-                    ml={i > 0 ? '-6px' : 0}
-                    zIndex={3 - i}
-                    display='block'
-                  />
-                ))}
-              </HStack>
-              <Text
-                fontSize='13px'
-                color='rgba(157,143,212,0.7)'
-                fontWeight='500'
-              >
-                Trusted by{' '}
-                <Box as='span' fontWeight='700' color='rgba(167,139,248,0.9)'>
-                  2,400+
-                </Box>{' '}
-                freelancers
-              </Text>
-            </HStack>
-            <HStack spacing={1}>
-              {[1, 2, 3, 4, 5].map((s) => (
-                <Box key={s} fontSize='12px'>
-                  ⭐
-                </Box>
-              ))}
-              <Text
-                fontSize='13px'
-                color='rgba(157,143,212,0.7)'
-                fontWeight='500'
-              >
-                4.9/5
-              </Text>
-            </HStack>
-          </HStack>
         </VStack>
 
         {/* Right: dashboard mockup — phone on mobile, desktop on large screens */}
