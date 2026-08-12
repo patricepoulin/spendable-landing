@@ -15,8 +15,7 @@
  *
  * Zero new dependencies — only @chakra-ui/react + react-icons already in package.json.
  */
-import React from 'react';
-import { Helmet } from 'react-helmet-async';
+import React, { useEffect } from 'react';
 import {
   Box,
   Flex,
@@ -33,9 +32,44 @@ import { RiArrowRightLine, RiCheckLine } from 'react-icons/ri';
 const BASE_URL = 'https://spendable.finance';
 const DEFAULT_IMAGE = `${BASE_URL}/og-image.png`;
 
-// ─── PageMeta — injects <title>, <meta description>, <canonical> per page ────
+const DEFAULT_TITLE = 'Spendable — Know exactly how much you can safely spend';
+const DEFAULT_DESCRIPTION =
+  'Financial clarity for freelancers. Income smoothing, tax reserves, and runway prediction so you always know how much you can safely spend.';
+
+function setMetaTag(attr: 'name' | 'property', key: string, content: string) {
+  let el = document.querySelector(`meta[${attr}="${key}"]`);
+  if (!el) {
+    el = document.createElement('meta');
+    el.setAttribute(attr, key);
+    document.head.appendChild(el);
+  }
+  el.setAttribute('content', content);
+}
+
+function setCanonical(href: string) {
+  let el = document.querySelector('link[rel="canonical"]');
+  if (!el) {
+    el = document.createElement('link');
+    el.setAttribute('rel', 'canonical');
+    document.head.appendChild(el);
+  }
+  el.setAttribute('href', href);
+}
+
+// ─── PageMeta — sets <title>, <meta description>, <canonical> per page ───────
 // Placed inside SEOPageLayout so every SEO page gets correct head tags
-// without each page needing to import Helmet directly.
+// without each page needing to wire this up directly.
+//
+// Previously used react-helmet-async's <Helmet>, but every SEO page is
+// lazy-loaded behind a Suspense boundary (see App.tsx), and Helmet's
+// side-effect-based commit never actually reached the document head for
+// any of them — title/description/canonical stayed on the homepage's
+// defaults for every guide/compare/for page, and worse, the canonical tag
+// pointed every one of these pages back at the homepage, telling search
+// engines to treat them as duplicates rather than index them. Direct DOM
+// manipulation avoids that library's Suspense interaction entirely — this
+// is a CSR-only site with no SSR streaming, so a library built mainly to
+// solve SSR head-tag problems was never the right tool here anyway.
 export function PageMeta({
   title,
   description,
@@ -47,24 +81,33 @@ export function PageMeta({
   canonical: string; // e.g. "/guides/freelance-tax-planning"
   ogImage?: string;
 }) {
-  const fullTitle = `${title} | Spendable`;
-  const fullUrl = `${BASE_URL}${canonical}`;
-  const image = ogImage ?? DEFAULT_IMAGE;
-  return (
-    <Helmet>
-      <title>{fullTitle}</title>
-      <meta name='description' content={description} />
-      <link rel='canonical' href={fullUrl} />
-      <meta property='og:title' content={fullTitle} />
-      <meta property='og:description' content={description} />
-      <meta property='og:url' content={fullUrl} />
-      <meta property='og:image' content={image} />
-      <meta property='og:type' content='article' />
-      <meta name='twitter:title' content={fullTitle} />
-      <meta name='twitter:description' content={description} />
-      <meta name='twitter:image' content={image} />
-    </Helmet>
-  );
+  useEffect(() => {
+    const fullTitle = `${title} | Spendable`;
+    const fullUrl = `${BASE_URL}${canonical}`;
+    const image = ogImage ?? DEFAULT_IMAGE;
+
+    document.title = fullTitle;
+    setMetaTag('name', 'description', description);
+    setCanonical(fullUrl);
+    setMetaTag('property', 'og:title', fullTitle);
+    setMetaTag('property', 'og:description', description);
+    setMetaTag('property', 'og:url', fullUrl);
+    setMetaTag('property', 'og:image', image);
+    setMetaTag('property', 'og:type', 'article');
+    setMetaTag('name', 'twitter:title', fullTitle);
+    setMetaTag('name', 'twitter:description', description);
+    setMetaTag('name', 'twitter:image', image);
+
+    // Reset to the homepage defaults on unmount so navigating away doesn't
+    // leave a stale title/canonical from this page in place.
+    return () => {
+      document.title = DEFAULT_TITLE;
+      setMetaTag('name', 'description', DEFAULT_DESCRIPTION);
+      setCanonical(`${BASE_URL}/`);
+    };
+  }, [title, description, canonical, ogImage]);
+
+  return null;
 }
 
 const APP_URL = 'https://app.spendable.finance';

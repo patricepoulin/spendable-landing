@@ -38,7 +38,7 @@ const theme = extendTheme({
       'html, body': {
         bg: '#F5F4EF',
         color: '#1C2B3A',
-        '-webkit-font-smoothing': 'antialiased',
+        WebkitFontSmoothing: 'antialiased',
         scrollBehavior: 'smooth',
       },
       '::selection': { bg: '#4C5FD5', color: 'white' },
